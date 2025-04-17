@@ -1,0 +1,21 @@
+# {{.Title}}
+
+{{$activeGroups := false}}
+{{range .Groups}}{{if .InUse}}{{$activeGroups = true}}{{end}}{{end}}
+{{if $activeGroups}}
+## Active Groups
+
+| Group | GID | Type | Members | Primary |
+|-------|-----|------|---------|---------|{{range .Groups}}{{if .InUse}}
+| {{.Name}} | {{.GID}} | {{.Type}} | {{.MemberCount}} | {{.PrimaryCount}} |{{end}}{{end}}
+{{end}}
+
+{{$unusedGroups := false}}
+{{range .Groups}}{{if not .InUse}}{{$unusedGroups = true}}{{end}}{{end}}
+{{if $unusedGroups}}
+## Unused Groups
+
+| Group | GID | Type | Members |
+|-------|-----|------|---------|{{range .Groups}}{{if not .InUse}}
+| {{.Name}} | {{.GID}} | {{.Type}} | {{.MemberCount}} |{{end}}{{end}}
+{{end}} 

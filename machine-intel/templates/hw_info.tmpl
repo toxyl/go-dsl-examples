@@ -1,0 +1,28 @@
+# {{.Title}}
+
+## CPU Information
+| Property | Value |
+|----------|-------|
+| Vendor | {{index .CPUInfo "vendor_id"}} |
+| Model | {{index .CPUInfo "model name"}} |
+| Cores | {{index .CPUInfo "cpu cores"}} |
+| Speed | {{index .CPUInfo "cpu MHz"}} MHz |
+| Cache | {{index .CPUInfo "cache size"}} |
+
+## Memory Information
+| Type | Total | Used | Free | Usage % |
+|------|-------|------|------|---------|
+| RAM | {{.Memory.Total}} | {{.Memory.Used}} | {{.Memory.Free}} | {{.Memory.Usage}} |
+| Swap | {{.Swap.Total}} | {{.Swap.Used}} | {{.Swap.Free}} | {{.Swap.Usage}} |
+
+## Disk Information
+| Device | Mount Point | Total | Used | Free | Usage % |
+|--------|-------------|-------|------|------|---------|
+{{range .Disks}}| {{.Device}} | {{.MountPoint}} | {{.Total}} | {{.Used}} | {{.Free}} | {{.Usage}} |
+{{end}}
+
+## Network Interfaces
+| Interface | IP Address | MAC Address | Status |
+|-----------|------------|-------------|--------|
+{{range .NetworkInterfaces}}| {{.Name}} | {{.IP}} | {{.MAC}} | {{.Status}} |
+{{end}} 

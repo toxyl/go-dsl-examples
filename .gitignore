@@ -1,0 +1,8 @@
+basic/dsl_*
+basic/template_*
+calculator/dsl_*
+calculator/template_*
+machine-intel/dsl_*
+machine-intel/template_*
+ohms-law/dsl_*
+ohms-law/template_*

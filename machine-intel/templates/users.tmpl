@@ -1,0 +1,5 @@
+# {{.Title}}
+
+| Username | UID | GID | Home | Groups | Shell | Last Login |
+|----------|-----|-----|------|--------|-------|------------|{{range .Users}}
+| {{.Username}} | {{.UID}} | {{.GID}} | {{.Home}} | {{.Groups}} | {{.Shell}} | {{.LastLogin}} |{{end}} 

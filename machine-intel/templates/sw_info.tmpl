@@ -1,0 +1,19 @@
+# {{.Title}}
+
+## Top 10 Processes by CPU Usage
+| Name | PID | CPU % | Memory % |
+|------|-----|-------|----------|
+{{range .ProcessesByCPU}}| {{.Name}} | {{.PID}} | {{.CPU}} | {{.Memory}} |
+{{end}}
+
+## Top 10 Processes by Memory Usage
+| Name | PID | CPU % | Memory % |
+|------|-----|-------|----------|
+{{range .ProcessesByMemory}}| {{.Name}} | {{.PID}} | {{.CPU}} | {{.Memory}} |
+{{end}}
+
+## Key Environment Variables
+| Variable | Value |
+|----------|-------|
+{{range .Environment}}| {{.Name}} | {{.Value}} |
+{{end}} 
