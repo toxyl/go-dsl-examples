@@ -4,8 +4,10 @@ go 1.24.2
 
 require (
 	github.com/charmbracelet/glamour v0.10.0
+	github.com/chzyer/readline v1.5.1
 	github.com/toxyl/flo v0.0.0-20240412132929-869b69ff6976
 	github.com/toxyl/math v0.0.1-alpha.4
+	github.com/yuin/goldmark v1.7.10
 )
 
 require (
@@ -30,7 +32,6 @@ require (
 	github.com/toxyl/errors v0.0.0-20240410073853-96b96b437ed5 // indirect
 	github.com/toxyl/glog v1.0.0-alpha.15 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
-	github.com/yuin/goldmark v1.7.10 // indirect
 	github.com/yuin/goldmark-emoji v1.0.5 // indirect
 	golang.org/x/net v0.33.0 // indirect
 	golang.org/x/sys v0.32.0 // indirect

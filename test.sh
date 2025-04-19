@@ -90,12 +90,20 @@ build "machine-intel"
 run "machine-intel" 
 
 #########################################
+printBlue "Executing Image Filter example..."
+#########################################
+genDSL "image-filter" 
+build "image-filter"
+run "image-filter" 
+
+#########################################
 printBlue "Cleaning up..."
 #########################################
 cleanup "basic"
 cleanup "calculator"
 cleanup "ohms-law"
 cleanup "machine-intel" 
+cleanup "image-filter" 
 rm -rf go-dsl
 rm -rf doc.*
 
