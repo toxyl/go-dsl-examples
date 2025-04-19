@@ -49,3 +49,25 @@ func hueToRGB(p, q, t float64) float64 {
 	}
 	return p
 }
+
+// Helper function to convert HSL to RGB
+func hslToRGB(h, s, l float64) (r, g, b float64) {
+	if s == 0 {
+		r, g, b = l, l, l
+		return
+	}
+
+	var q float64
+	if l < 0.5 {
+		q = l * (1 + s)
+	} else {
+		q = l + s - l*s
+	}
+	p := 2*l - q
+
+	r = hueToRGB(p, q, h+1.0/3.0)
+	g = hueToRGB(p, q, h)
+	b = hueToRGB(p, q, h-1.0/3.0)
+
+	return
+}
